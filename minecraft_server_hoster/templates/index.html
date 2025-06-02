@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}Control Panel{% endblock %}
+
+{% block content %}
+<h1>Minecraft Server Control Panel</h1>
+
+<h2>Server Controls</h2>
+<p>Status: <span id="serverStatus">Unknown</span></p>
+<button id="startServerBtn">Start Server</button>
+<button id="stopServerBtn">Stop Server</button>
+<button id="restartServerBtn">Restart Server</button>
+
+<h2>Server Console</h2>
+<pre id="consoleOutput">Server logs will appear here...</pre>
+<input type="text" id="commandInput" placeholder="Enter command">
+<button id="sendCommandBtn">Send Command</button>
+
+<h2>File Management</h2>
+<input type="file" id="fileUploadInput">
+<button id="uploadFileBtn">Upload File</button>
+<div id="fileList">
+    <p>Uploaded files will be listed here.</p>
+</div>
+
+<h2>Backups</h2>
+<button id="backupServerBtn">Create Backup</button>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
